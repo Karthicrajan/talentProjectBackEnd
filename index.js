@@ -5,6 +5,10 @@ const workpost = require("./routes/workpost");
 const auth = require("./routes/auth");
 const manageUser = require("./routes/manageUser");
 const path = require("path"); 
+const cors = require('cors');
+app.use(cors({
+    origin:"https://lively-sprite-f6dc40.netlify.app",
+}))
 app.use("/images", express.static(path.join(__dirname,"/images")));
 require("dotenv").config();
 console.log('this is tes');

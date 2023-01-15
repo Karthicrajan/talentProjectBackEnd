@@ -50,7 +50,7 @@ router.put('/inActive', verify, async (req,res)=>{
         const newWorkPostSataus = await Workpost.findByIdAndUpdate(req.body.id,{
             $set : {isActive : req.body.isActive}
         },{new:true});
-        console.log(newWorkPostSataus);
+        // console.log(newWorkPostSataus);
         res.status(200).json(newWorkPostSataus);
     }catch(err){
         res.status(500).json(err);
