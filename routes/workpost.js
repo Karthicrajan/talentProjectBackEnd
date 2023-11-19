@@ -36,6 +36,7 @@ const verify = (req,res,next) =>{
 //create work post
 router.post('/createpost', verify, async (req,res)=>{
     const newWorkPost = new Workpost(req.body);
+    console.log(newWorkPost);
     try{        
         const savedPost = await newWorkPost.save();  
         res.status(200).json(savedPost);

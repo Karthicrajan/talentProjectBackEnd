@@ -7,8 +7,8 @@ const manageUser = require("./routes/manageUser");
 const path = require("path"); 
 const cors = require('cors');
 app.use(cors({
-    origin:"https://talentprojects.netlify.app",
-    // origin:"http://localhost:3000",
+    // origin:"https://talentprojects.netlify.app",
+    origin:"http://localhost:3000",
 }))
 app.use("/images", express.static(path.join(__dirname,"/images")));
 require("dotenv").config();
@@ -19,7 +19,6 @@ mongoose.connect(process.env.MONGO_URL).then(
 ).catch((err)=>{
     console.log(err);
 })
-
 app.use("/api/workposts", workpost);
 app.use("/api/auth",auth);
 app.use("/api/manageUser", manageUser);
